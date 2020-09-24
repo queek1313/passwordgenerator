@@ -31,3 +31,56 @@ function passwordOptions (){
     }
     return options
   }
+  // Function for getting a random element from an array
+function randomizer(arr) {
+    var randIndex = Math.floor(Math.random() * arr.length);
+    var randElement = arr[randIndex];
+    return randElement;
+  }
+  
+  function generatePassword (){
+    var options = passwordOptions()
+    var password = []
+    var possible =[]
+    var guaranteed = [] 
+  
+  // four if statements to check what options the user wants 
+  if (options.hasLowerCase){
+    possible=possible.concat(lowerCase)
+    guaranteed.push(randomizer(lowerCase))
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  for (var i=0; i <options.length; i++){
+    var characters = randomizer(possible)
+    password.push(characters)
+  }
+  for (var i=0; i <guaranteed.length; i++){
+    password[i]=guaranteed[i]
+  }
+  
+  
+  return password.join("")
+  }
+  
+  
+  // Assignment Code
+  var generateBtn = document.querySelector("#generate");
+  
+  // Write password to the #password input
+  function writePassword() {
+    var password = generatePassword();
+    var passwordText = document.querySelector("#password");
+  
+    passwordText.value = password;
+  
+  }
+  
+  // Add event listener to generate button
+  generateBtn.addEventListener("click", writePassword);
