@@ -14,13 +14,13 @@ function passwordOptions() {
         alert("shorter password please")
         return
     }
+
     var hasUpperCase = confirm("do you want upper case letters?")
     var hasLowerCase = confirm("do you want lower case letters?")
     var hasNumbers = confirm("do you want numbers?")
     var hasSpecial = confirm("do you want special characters?")
     
-    // you will need to make confirms for the rest of the actions
-    // we need to creat an IF statement checking if at least has upper case, lower case, number, special
+    // need to creat an IF statement checking if at least has upper case, lower case, number, special
     if (hasUpperCase === false &&
         hasLowerCase === false &&
         hasNumbers === false &&
